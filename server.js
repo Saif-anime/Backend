@@ -10,7 +10,7 @@ const cors = require('cors');
 // setting up middleware
 
 app.use(cors({
-  origin: "http://localhost:3000", // ⭐ frontend URL yaha likhna zaroori
+  origin: process.env.FRONTEND, // ⭐ frontend URL yaha likhna zaroori
   credentials: true // ⭐ allow cookies/tokens/session
 }));
 app.use('/uploads', express.static('uploads'));
