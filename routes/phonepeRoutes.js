@@ -8,8 +8,8 @@ const { v4: uuidv4 } = require('uuid');
 const Order = require('../models/Order');
 const authMiddleware = require("../middleware/auth");
 // UAT environment
-const MERCHANT_KEY = "96434309-7796-489d-8924-ab56988a6076"
-const MERCHANT_ID = "PGTESTPAYUAT86"
+const MERCHANT_KEY = process.env.MERCHANT_KEY
+const MERCHANT_ID = process.env.MERCHANT_ID
 
 // const prod_URL = "https://api.phonepe.com/apis/hermes/pg/v1/pay"
 // const prod_URL = "https://api.phonepe.com/apis/hermes/pg/v1/status"
@@ -17,12 +17,13 @@ const MERCHANT_ID = "PGTESTPAYUAT86"
 const MERCHANT_BASE_URL = "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay"
 const MERCHANT_STATUS_URL = "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status"
 
-const redirectUrl = "http://localhost:8000"
+const redirectUrl = process.env.redirectUrl
 
-BACKEND_URL = "http://localhost:8000/api/phonepe/status"
+BACKEND_URL = process.env.redirectUrl+"/api/phonepe/status"
 
-const successUrl = "http://localhost:3000/payment-status"
-const failureUrl = "http://localhost:3000/payment-status"
+const successUrl = process.env.FRONTEND+"/payment-status"
+const failureUrl = process.env.FRONTEND+"/payment-status"
+
 
 
 
